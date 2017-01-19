@@ -1,0 +1,36 @@
+{
+  "name": "svg-pipelline",
+  "description": "SVG cleaning & transformation pipeline.",
+  "version": "0.1.0",
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "svg",
+    "transform",
+    "clean",
+    "flatten",
+    "pipeline"
+  ],
+  "author": "Jannis R <mail@jannisr.de>",
+  "homepage": "https://github.com/derhuerst/svg-pipelline",
+  "repository": "derhuerst/svg-pipelline",
+  "bugs": "https://github.com/derhuerst/svg-pipelline/issues",
+  "license": "ISC",
+  "engines": {
+    "node": ">=6"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "standard": "^8.6.0",
+    "tap-min": "^1.2.0",
+    "tape": "^4.6.3"
+  },
+  "scripts": {
+    "lint": "standard",
+    "test": "node test.js | tap-min",
+    "prepublish": "npm test"
+  }
+}
