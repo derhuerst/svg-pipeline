@@ -1,5 +1,5 @@
 {
-  "name": "svg-pipelline",
+  "name": "svg-pipeline",
   "description": "SVG cleaning & transformation pipeline.",
   "version": "0.1.0",
   "main": "index.js",
@@ -14,9 +14,9 @@
     "pipeline"
   ],
   "author": "Jannis R <mail@jannisr.de>",
-  "homepage": "https://github.com/derhuerst/svg-pipelline",
-  "repository": "derhuerst/svg-pipelline",
-  "bugs": "https://github.com/derhuerst/svg-pipelline/issues",
+  "homepage": "https://github.com/derhuerst/svg-pipeline",
+  "repository": "derhuerst/svg-pipeline",
+  "bugs": "https://github.com/derhuerst/svg-pipeline/issues",
   "license": "ISC",
   "engines": {
     "node": ">=6"
