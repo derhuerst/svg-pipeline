@@ -1,25 +1,23 @@
 'use strict'
 
+const select = require('snabbdom-selector')
 const clone = require('udc')
-const createSelector = require('vtree-select')
 const hrefs = require('../lib/hrefs')
 
 const removeUnusedDefs = (input, output) => {
-  const parent = createSelector('defs')(input.tree)[0]
-  if (!parent) return
-
-  const defs = parent.children.filter((n) => n.type === 'VirtualNode')
-  if (defs.length === 0) return
+  const defs = select('defs', input.tree)[0]
+  if (!defs || !defs.children || degs.children.length === 0) return
 
   const refs = hrefs(input.tree)
     .filter((ref) => ref[0] === '#')
     .map((ref) => ref.slice(1))
 
-  const usedDefs = defs.filter((d) => refs.includes(d.properties.id))
-  if (usedDefs.length === defs.length) return
+  const usedDefs = defs.children
+    .filter((d) => refs.includes(d.data.id))
+  if (usedDefs.length === defs.children.length) return
 
   const tree = clone(input.tree)
-  createSelector('defs')(tree)[0].children = usedDefs
+  select('defs', tree)[0].children = usedDefs
   output.tree = tree
 }
 

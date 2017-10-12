@@ -1,6 +1,6 @@
 'use strict'
 
-const h = require('virtual-dom/virtual-hyperscript/svg')
+const h = require('snabbdom/h').default
 const test = require('tape')
 
 const hrefs = require('../../lib/hrefs')

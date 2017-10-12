@@ -1,6 +1,6 @@
 'use strict'
 
-const h = require('virtual-dom/virtual-hyperscript/svg')
+const h = require('snabbdom/h').default
 const test = require('tape')
 
 const filter = require('../../lib/filter')
@@ -16,13 +16,13 @@ const tree = h('svg', {xmlns: 'http://www.w3.org/2000/svg'}, [
 ])
 
 const predicate = (node, parent) => {
-	if (node.tagName === 'path' && parent.tagName === 'defs') return false
-	if (node.tagName === 'circle' && parent.tagName === 'svg') return false
+	if (node.sel === 'path' && parent.sel === 'defs') return false
+	if (node.sel === 'circle' && parent.sel === 'svg') return false
 	return true
 }
 
 const filtered = h('svg', {xmlns: 'http://www.w3.org/2000/svg'}, [
-	h('defs'),
+	h('defs', []),
 	h('g', {id: 'bar'}, [
 		h('circle', {r: '10', cx: '10', cy: '10'})
 	])

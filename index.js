@@ -1,19 +1,14 @@
 'use strict'
 
-const createParser = require('html-to-vdom')
-const VNode = require('virtual-dom/vnode/vnode')
-const VText = require('virtual-dom/vnode/vtext')
+const parse = require('snabby')
 const middl = require('middl')
-const stringify = require('vdom-to-html')
-
-const parse = createParser({VNode, VText})
+const stringify = require('snabbdom-to-html')
 
 const createPipeline = () => {
   const pipeline = middl()
 
   const run = (svg) => {
-  	const tree = parse(svg)[0]
-  	if (!tree) return Promise.reject('failed to parse the SVG')
+  	const tree = parse(svg)
 
     return pipeline.run({tree}, {})
     .then(({tree}) => stringify(tree))
