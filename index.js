@@ -11,11 +11,13 @@ const parse = createParser({VNode, VText})
 const createPipeline = () => {
   const pipeline = middl()
 
-  const run = (svg) =>
-    pipeline.run({
-      tree: parse(svg)[0]
-    }, {})
+  const run = (svg) => {
+  	const tree = parse(svg)[0]
+  	if (!tree) return Promise.reject('failed to parse the SVG')
+
+    return pipeline.run({tree}, {})
     .then(({tree}) => stringify(tree))
+  }
 
   const out = Object.create(pipeline)
   out.run = run

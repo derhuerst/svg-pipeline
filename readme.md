@@ -1,6 +1,6 @@
 # svg-pipeline
 
-**Boilerplate for modules I write.**
+**SVG cleaning & transformation pipeline.** Like [svgo](https://github.com/svg/svgo), but trying to be cleaner and more extensible. Work in progress.
 
 [![npm version](https://img.shields.io/npm/v/svg-pipeline.svg)](https://www.npmjs.com/package/svg-pipeline)
 [![build status](https://img.shields.io/travis/derhuerst/svg-pipeline.svg)](https://travis-ci.org/derhuerst/svg-pipeline)

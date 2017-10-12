@@ -24,6 +24,7 @@
   "dependencies": {
     "html-to-vdom": "github:timbeyer/html-to-vdom",
     "middl": "^0.4.0",
+    "stream-sink": "^2.1.0",
     "svg-transform-parser": "^0.0.1",
     "udc": "^1.0.1",
     "vdom-to-html": "^2.3.1",
@@ -38,6 +39,6 @@
   "scripts": {
     "lint": "standard",
     "test": "node test.js | tap-min",
-    "prepublish": "npm test"
+    "prepublishOnly": "npm test"
   }
 }
