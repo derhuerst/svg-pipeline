@@ -4,18 +4,18 @@ const clone = require('udc')
 const filter = require('../lib/filter')
 const withText = require('../lib/elements-with-text-content.json')
 
-const textAndIndentation = /^[\s\n]*$/
+const indentationOnly = /^\s*$/
 
 const removeEmptyTexts = (input, output) => {
   const tree = clone(input.tree)
-  filter(tree, (node) => {
-    if (node.tagName && withText.includes(node.tagName)) {
-      if (node.children.some((child) => child.type !== 'VirtualText')) return true
-      const text = node.children.map((child) => child.text).join('')
-      return !text.match(textAndIndentation)
-    }
-    return true
+
+  filter(tree, null, (n) => {
+    if (n.sel && !withText.includes(n.sel)) return true // non-text element
+    if (n.children && n.children.length > 0) return true
+    if (n.text && !indentationOnly.test(n.text)) return true
+    return false
   })
+
   output.tree = tree
 }
 
