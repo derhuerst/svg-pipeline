@@ -22,10 +22,10 @@
     "node": ">=6"
   },
   "dependencies": {
+    "@derhuerst/snabbdom-selector": "^1.3.2",
     "html-to-vdom": "github:timbeyer/html-to-vdom",
     "middl": "^0.4.0",
     "snabbdom": "^0.7.0",
-    "snabbdom-selector": "^1.3.4",
     "snabbdom-to-html": "^3.3.0",
     "snabby": "github:jamen/snabby",
     "stream-sink": "^2.1.0",
