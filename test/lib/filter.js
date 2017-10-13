@@ -3,9 +3,10 @@
 const h = require('snabbdom/h').default
 const test = require('tape')
 
+const {svg} = require('../util')
 const filter = require('../../lib/filter')
 
-const tree = h('svg', {xmlns: 'http://www.w3.org/2000/svg'}, [
+const tree = svg([
   h('defs', [
     h('path', {id: 'foo', d: 'M10 10 h10'})
   ]),
@@ -21,7 +22,7 @@ const predicate = (node, parent) => {
   return true
 }
 
-const filtered = h('svg', {xmlns: 'http://www.w3.org/2000/svg'}, [
+const filtered = svg([
   h('defs'),
   h('g', {id: 'bar'}, [
     h('circle', {r: '10', cx: '10', cy: '10'})
