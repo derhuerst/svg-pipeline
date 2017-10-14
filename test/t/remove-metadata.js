@@ -2,7 +2,7 @@
 
 const h = require('snabbdom/h').default
 const test = require('tape')
-const {select} = require('@derhuerst/snabbdom-selector')
+const {select} = require('snabbdom-selector')
 
 const {svg, textNode} = require('../util')
 const removeMetadata = require('../../t/remove-metadata')

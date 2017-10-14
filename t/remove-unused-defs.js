@@ -1,6 +1,6 @@
 'use strict'
 
-const {select} = require('@derhuerst/snabbdom-selector')
+const {select} = require('snabbdom-selector')
 const clone = require('udc')
 
 const ids = require('../lib/ids')
