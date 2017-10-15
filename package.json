@@ -30,7 +30,7 @@
     "snabby": "github:jamen/snabby",
     "stream-sink": "^2.1.0",
     "svg-points": "^6.0.0",
-    "svg-transform-parser": "^0.0.1",
+    "svgpath": "^2.2.1",
     "transformation-matrix": "^1.5.0",
     "udc": "^1.0.1"
   },

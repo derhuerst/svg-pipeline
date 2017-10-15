@@ -1,7 +1,6 @@
 'use strict'
 
 const clone = require('udc')
-const parseTransform = require('svg-transform-parser').parse
 
 const walkWithPath = require('../lib/walk-with-path')
 const reduceChain = require('../lib/reduce-chain')
@@ -21,7 +20,7 @@ const flattenTransforms = (input, output) => {
         || (n.data.attrs && n.data.attrs.transform)
         || null
       )
-      if (transform) chain.transform = parseTransform(transform)
+      if (transform) chain.transform = transform
     }
     return true // always recurse
   }
