@@ -14,15 +14,20 @@ const combineTransforms = (transforms, chain) => {
 const flattenTransforms = (input, output) => {
   const tree = clone(input.tree)
 
-  const onEnter = (node, chain) => {
-    const attrs = node.properties && node.properties.attributes || null
-    const transform = attrs && attrs.transform || null
-    if (transform) chain.transform = parseTransform(transform)
-
-    return true
+  const onEnter = (n, chain) => {
+    if (n.data) {
+      const transform = (
+        n.data.transform
+        || (n.data.attrs && n.data.attrs.transform)
+        || null
+      )
+      if (transform) chain.transform = parseTransform(transform)
+    }
+    return true // always recurse
   }
 
   const onLeave = (node, chain) => {
+    if (!node.sel) return
     const currentTransforms = reduceChain(chain, combineTransforms, [])
     // todo: apply collected transforms
   }
